@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso: Transforma tu Enseñanza con Canva e IA | Centro Cultural</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2A5CAA;
+            --secondary: #F0B429;
+            --accent: #E74C3C;
+            --light: #F8F9FA;
+            --dark: #2C3E50;
+            --gray: #6C757D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header y Navegación */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #1f4a87;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e0a326;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Secciones generales */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        /* Objetivos y Público */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* Temario */
+        .temario-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .sabado {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .sabado:last-child {
+            margin-bottom: 0;
+        }
+
+        .sabado-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .sabado-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .sabado-badge {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .sabado-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .sabado-content li {
+            margin-bottom: 8px;
+        }
+
+        .proyecto {
+            background-color: #f0f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .proyecto strong {
+            color: var(--accent);
+        }
+
+        /* Perfil y Metodología */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            align-items: start;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Inversión */
+        .pricing-card {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a3d7a 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 50px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .pricing-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .payment-option {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Formulario de contacto */
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 20px;
+            }
+
+            .nav-links a {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .grid-2,
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .sabado-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .sabado-badge {
+                margin-top: 10px;
+            }
+
+            .pricing-card {
+                padding: 30px 20px;
+            }
+
+            .price {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="https://i.ibb.co/hJcWmjbn/centro-cultural-sampedrano-2.png"
+                        alt="Centro Cultural Sampedrano" width="60" height="50" style="margin-right: 12px;">
+                    Centro Cultural Sampedrano
+                </div>
+                <div class="nav-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#objetivos">Objetivos</a>
+                    <a href="#temario">Temario</a>
+                    <a href="#perfil">Perfil</a>
+                    <a href="#inversion">Inversión</a>
+                    <a href="#contacto">Inscripción</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Curso: Transforma tu Enseñanza con Canva e IA</h1>
+            <h2>Convierte tus clases en experiencias de aprendizaje memorables</h2>
+            <p>La educación de hoy invita a innovar y transformar el aprendizaje. Aprende a crear recursos educativos
+                <span class="highlight">visuales, interactivos y efectivos
+                </span>. con las herramientas que están revolucionando la enseñanza.
+            </p>
+            <a href="#contacto" class="btn">¡Inscríbete Ahora!</a>
+        </div>
+    </section>
+
+    <!-- Objetivos y Público -->
+    <section id="objetivos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Objetivo del Curso</h2>
+                <p>Capacitar a docentes para diseñar recursos educativos visuales, interactivos y pedagógicamente
+                    efectivos, utilizando Canva, Inteligencia Artificial y herramientas digitales complementarias,
+                    aplicables directamente en el aula presencial o virtual.</p>
+            </div>
+
+            <div class="info-cards">
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Público Objetivo</h3>
+                    <ul>
+                        <li>Docentes de primaria, secundaria y media</li>
+                        <li>Docentes universitarios</li>
+                        <li>Facilitadores, capacitadores y maestros independientes</li>
+                        <li><strong>No se requieren conocimientos previos en diseño</strong></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Estructura General</h3>
+                    <ul>
+                        <li><strong>Modalidad:</strong> Presencial o Virtual</li>
+                        <li><strong>Duración:</strong> 24 horas</li>
+                        <li><strong>Horario:</strong> Sábados, 3 horas por sesión (8 sábados)</li>
+                        <li><strong>Metodología:</strong> 100% práctica, basada en proyectos reales</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Metodología Didáctica</h3>
+                    <ul>
+                        <li>Enfoque práctico: ejercicios guiados en laboratorio o plataforma virtual</li>
+                        <li>Aprendizaje por proyectos: cada sesión incluye un proyecto aplicable a tu aula</li>
+                        <li>Uso de tecnología: Canva, IA, plantillas y recursos digitales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temario -->
+    <section id="temario" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Temario Detallado</h2>
+                <p>8 sábados de transformación digital para tu práctica docente</p>
+            </div>
+
+            <div class="temario-container">
+                <!-- Sábado 1 -->
+                <div class="sabado">
+                    <div class="sabado-header">
+                        <div class="sabado-title">S1 – Fundamentos de Canva</div>
+                        <div class="sabado-badge">Sábado 1</div>
+                    </div>
+                    <div class="sabado-content">
+                        <ul>
+                            <li>Qué es Canva y su impacto en la educación</li>
+                            <li>Principios de diseño educativo: claridad, jerarquía y contraste</li>
+                            <li>Errores comunes y mejores prácticas</li>
+                        </ul>
+                        <div class="proyecto">
+                            <strong>Proyecto:</strong> Presentación educativa atractiva en 30 minutos
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábado 2 -->
+                <div class="sabado">
+                    <div class="sabado-header">
+                        <div class="sabado-title">S2 – Storytelling educativo con IA</div>
+                        <div class="sabado-badge">Sábado 2</div>
+                    </div>
+                    <div class="sabado-content">
+                        <ul>
+                            <li>Creación de historias educativas con ChatGPT</li>
+                            <li>Integración de imágenes en Canva</li>
+                            <li>Narrativa visual para clases memorables</li>
+                        </ul>
+                        <div class="proyecto">
+                            <strong>Proyecto:</strong> Historia educativa ilustrada
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábado 3 -->
+                <div class="sabado">
+                    <div class="sabado-header">
+                        <div class="sabado-title">S3 – Diseño visual avanzado</div>
+                        <div class="sabado-badge">Sábado 3</div>
+                    </div>
+                    <div class="sabado-content">
+                        <ul>
+                            <li>Uso de mockups educativos</li>
+                            <li>Creación y adaptación de infografías con IA</li>
+                        </ul>
+                        <div class="proyecto">
+                            <strong>Proyecto:</strong> Infografía lista para imprimir o proyectar
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábado 4 -->
+                <div class="sabado">
+                    <div class="sabado-header">
+                        <div class="sabado-title">S4 – Presentaciones dinámicas y multimedia</div>
+                        <div class="sabado-badge">Sábado 4</div>
+                    </div>
+                    <div class="sabado-content">
+                        <ul>
+                            <li>Insertar videos y animaciones en presentaciones</li>
+                            <li>Trucos de Canva para clases interactivas</li>
+                            <li>Control remoto de presentaciones desde el celular</li>
+                        </ul>
+                        <div class="proyecto">
+                            <strong>Proyecto:</strong> Clase interactiva modelada en Canva
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábado 5 -->
+                <div class="sabado">
+                    <div class="sabado-header">
+                        <div class="sabado-title">S5 – Canva + IA para productividad</div>
+                        <div class="sabado-badge">Sábado 5</div>
+                    </div>
+                    <div class="sabado-content">
+                        <ul>
+                            <li>Uso de Canva Magic Studio: Magic Write, Edit, Design y Eraser</li>
+                            <li>Creación de líneas de tiempo y traducción de infografías</li>
+                        </ul>
+                        <div class="proyecto">
+                            <strong>Proyecto:</strong> Recurso histórico interactivo
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábado 6 -->
+                <div class="sabado">
+                    <div class="sabado-header">
+                        <div class="sabado-title">S6 – Organización escolar y recursos institucionales</div>
+                        <div class="sabado-badge">Sábado 6</div>
+                    </div>
+                    <div class="sabado-content">
+                        <ul>
+                            <li>Creación de calendarios, festivales, cumpleaños y avisos</li>
+                            <li>Diseño rápido y reutilizable</li>
+                        </ul>
+                        <div class="proyecto">
+                            <strong>Proyecto:</strong> Kit visual escolar completo
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábado 7 -->
+                <div class="sabado">
+                    <div class="sabado-header">
+                        <div class="sabado-title">S7 – Interactividad y evaluación activa</div>
+                        <div class="sabado-badge">Sábado 7</div>
+                    </div>
+                    <div class="sabado-content">
+                        <ul>
+                            <li>Actividades interactivas en Canva</li>
+                            <li>Edición avanzada de PDFs y worksheets editables</li>
+                            <li>3 actividades de 4 asignaturas: Ciencias, Matemáticas, Historia e Idioma</li>
+                        </ul>
+                        <div class="proyecto">
+                            <strong>Proyecto:</strong> Paquete de actividades listas para usar
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábado 8 -->
+                <div class="sabado">
+                    <div class="sabado-header">
+                        <div class="sabado-title">S8 – Planeación docente y proyecto final</div>
+                        <div class="sabado-badge">Sábado 8</div>
+                    </div>
+                    <div class="sabado-content">
+                        <ul>
+                            <li>Creación de planes de clase completos, worksheets y recursos integrados</li>
+                            <li>Exportación y portafolio docente</li>
+                        </ul>
+                        <div class="proyecto">
+                            <strong>Proyecto Final:</strong> Clase completa diseñada con Canva + IA
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfil y Beneficios -->
+    <section id="perfil">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Qué lograrás con este curso?</h2>
+                <p>Perfil del participante al finalizar el curso</p>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 25px; font-size: 1.8rem;">Competencias que
+                        desarrollarás</h3>
+                    <ul class="checklist">
+                        <li>Diseñar presentaciones educativas visuales y atractivas</li>
+                        <li>Crear material interactivo (infografías, líneas de tiempo, worksheets y actividades)</li>
+                        <li>Aplicar IA para planificar, generar contenido y ahorrar tiempo docente</li>
+                        <li>Desarrollar historias educativas y storytelling visual</li>
+                        <li>Integrar videos, animaciones y recursos multimedia sin distracciones</li>
+                        <li>Editar y reutilizar PDFs educativos</li>
+                        <li>Gestionar recursos visuales institucionales (calendarios, festivales, comunicados)</li>
+                        <li>Implementar estrategias de interactividad que aumentan la participación estudiantil</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 25px; font-size: 1.8rem;">Beneficios inmediatos
+                    </h3>
+                    <div class="card">
+                        <i class="fas fa-rocket" style="color: var(--accent);"></i>
+                        <h3>Impulsa tu enseñanza</h3>
+                        <p>Atrévete a darle un impulso real a tus clases. Convierte tus sesiones en experiencias
+                            visuales, interactivas y memorables.</p>
+                    </div>
+
+                    <div class="card" style="margin-top: 20px;">
+                        <i class="fas fa-clock" style="color: var(--secondary);"></i>
+                        <h3>Ahorra tiempo valioso</h3>
+                        <p>Genera material docente en cuestión de minutos en lugar de horas. Recupera tiempo para lo que
+                            realmente importa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inversión -->
+    <section id="inversion" style="background-color: #f0f7ff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Inversión y Forma de Pago</h2>
+                <p>Una inversión en tu desarrollo profesional con retorno inmediato</p>
+            </div>
+
+            <div class="pricing-card">
+                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Curso Completo</h3>
+                <p style="opacity: 0.9;">Transforma tu enseñanza con Canva e IA</p>
+
+                <div class="price">L 1,800</div>
+
+                <div class="payment-option">
+                    <p style="font-size: 1.3rem; margin-bottom: 10px;">✅ Pago mensual cómodo</p>
+                    <p style="font-size: 1.5rem; font-weight: 700;">L 900 × 2 meses</p>
+                    <p style="margin-top: 10px; opacity: 0.9;">Ideal para el presupuesto docente</p>
+                </div>
+
+                <ul class="pricing-features">
+                    <li>24 horas de capacitación especializada</li>
+                    <li>Certificado por el Centro Cultural Sampedrano</li>
+                    <li>Acceso a recursos y plantillas exclusivas</li>
+                    <li>Asesoría personalizada durante el curso</li>
+                    <li>Material de apoyo en formato digital</li>
+                </ul>
+
+                <a href="#contacto" class="btn btn-secondary" style="font-size: 1.1rem; padding: 15px 40px;">¡Quiero
+                    Inscribirme!</a>
+
+                <p style="margin-top: 20px; opacity: 0.9; font-size: 0.9rem;">✅ Curso competitivo y con alto valor
+                    práctico</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Inscripciones y Contacto</h2>
+                <p>Completa el formulario para recibir más información e inscribirte al próximo grupo</p>
+            </div>
+
+            <div class="contact-form">
+                <form id="inscripcionForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="institucion">Institución educativa</label>
+                            <input type="text" id="institucion" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nivel">Nivel educativo que enseña *</label>
+                            <select id="nivel" class="form-control" required>
+                                <option value="">Seleccione un nivel</option>
+                                <option value="primaria">Primaria</option>
+                                <option value="secundaria">Secundaria/Media</option>
+                                <option value="universitario">Universitario</option>
+                                <option value="capacitador">Capacitador/Facilitador</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalidad">Modalidad preferida *</label>
+                            <select id="modalidad" class="form-control" required>
+                                <option value="">Seleccione modalidad</option>
+                                <option value="presencial">Presencial</option>
+                                <option value="virtual">Virtual</option>
+                                <option value="indiferente">Indiferente</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Comentarios o preguntas adicionales</label>
+                        <textarea id="mensaje" class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 30px;">
+                        <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem;">Enviar solicitud de
+                            inscripción</button>
+                    </div>
+
+                    <p style="text-align: center; margin-top: 20px; color: var(--gray); font-size: 0.9rem;">Nos
+                        pondremos en contacto contigo en un plazo máximo de 48 horas para confirmar tu inscripción y
+                        proporcionarte los detalles de pago.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Manejo del formulario de inscripción
+        document.getElementById('inscripcionForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Aquí normalmente enviarías los datos a un servidor
+            // Por ahora, solo mostraremos un mensaje de confirmación
+            alert('¡Gracias por tu interés! Hemos recibido tu solicitud de inscripción. Nos pondremos en contacto contigo en breve para confirmar tu lugar en el curso.');
+
+            // Reseteamos el formulario
+            this.reset();
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animación a las tarjetas y secciones
+        document.querySelectorAll('.card, .sabado, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
